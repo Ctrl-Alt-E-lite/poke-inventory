@@ -1,0 +1,22 @@
+{
+  "name": "poke-inventory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ctrl-Alt-E-lite/poke-inventory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ctrl-Alt-E-lite/poke-inventory/issues"
+  },
+  "homepage": "https://github.com/Ctrl-Alt-E-lite/poke-inventory#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
