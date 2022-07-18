@@ -1,6 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+
+const sequelize = require('./src/db'); //database
+
+//check database connection
+sequelize
+  .authenticate()
+  .then((res) => console.log('Datanase is connected'))
+  .catch((err) => {
+    console.log('There was an error connecting to the database', error)
+    process.exit(1);
+  });
+
 var corsOptions = {
   origin: "http://localhost:8081"
 };
