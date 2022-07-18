@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Ctrl-Alt-E-lite/poke-inventory#readme",
   "dependencies": {
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "react-router-dom": "^6.3.0"
   }
 }
