@@ -1,9 +1,10 @@
 //MODEL
 const sequelize = require('../db');
-const { sequelize, Sequelize } = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 const Team = sequelize.define('team', {
-    name: Sequelize.STRING,
-
+    teamName : Sequelize.STRING,
+    pokemon: Sequelize.JSON
 });
+
 module.exports = Team;
