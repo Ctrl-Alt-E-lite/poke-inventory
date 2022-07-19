@@ -57,7 +57,11 @@ exports.getAllPokemonOnTeam = async (req, res) => {
         })
     }
 }
-
+/**
+ * @desc Get All pokemon
+ * @route GET api/getAllPokemon
+ * @access Public
+ */
 exports.getAllPokemon =  async (req, res) => {
     try{
         const getPokemon = await Pokemon.findAll()
@@ -71,6 +75,28 @@ exports.getAllPokemon =  async (req, res) => {
         res.status(400).json({
             success: false,
             message: 'pokemon not returned'
+        })
+    }
+}
+/**
+ * @desc Get team by id
+ * @route GET api/team/:id
+ * @access Public
+ */
+exports.getTeamById = async (req, res) => {
+    try{
+        const teamId = req.params.id;
+        const foundTeam = await Team.findByPk(teamId);
+        res.status(200).json({
+            foundTeam,
+            success: true,
+            message: 'Team by Id returned'
+        })
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Team by ID not returned - ERROR: ', error
         })
     }
 }
