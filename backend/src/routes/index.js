@@ -10,7 +10,8 @@ const {
     getAllPokemonOnTeam,
     getAllPokemon,
     getTeamById,
-    getPokemonByPokedex
+    getPokemonByPokedex,
+    deleteTeam
 } = require('../controller/index');
 
 //routers
@@ -19,12 +20,13 @@ router.get('*/teams/:id/all-pokemon', getAllPokemonOnTeam); //get all pokemon on
 router.get('*/getAllPokemon', getAllPokemon); //get all pokemon
 router.get('*/pokemon/:pokedex', getPokemonByPokedex); //get pokemon by pokedex
 router.get('*/team/:id', getTeamById); //get team by id
-//get teams a pokemon is on
-//delete team
-//delete pokemon
-//create a team
-//add pokemon to a team
-//update a team
+//get all teams a pokemon is on
+router.delete('*/delete/team/:id', deleteTeam); //delete team
+//create a team + add at least one pokemon
+//add pokemon to a team up to 6 can be added
+//delete pokemon off a team - team must have at least 1 pokemon on it
+//update a team - update team name
+//search team by name
 
 
 module.exports = router;

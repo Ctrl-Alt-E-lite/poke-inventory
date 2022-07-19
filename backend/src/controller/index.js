@@ -126,3 +126,25 @@ exports.getPokemonByPokedex = async (req, res) => {
         })
     }
 }
+/**
+ * @desc Delete team
+ * @route DELETE api/delete/team/:id
+ * @access Private
+ */
+exports.deleteTeam = async (req, res) => {
+    try{
+        const teamId = req.params.id;
+        const foundTeam = await Team.findByPk(teamId);
+        res.status(200).json({
+            foundTeam,
+            success: true,
+            message: 'Team deleted'
+        })
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Team not deleted -  ERROR: ', error
+        })
+    }
+}
