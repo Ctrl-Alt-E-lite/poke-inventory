@@ -100,3 +100,29 @@ exports.getTeamById = async (req, res) => {
         })
     }
 }
+/**
+ * @desc Get Pokemon by Pokedex
+ * @route GET api/pokemon/:pokedex
+ * @access Public
+ */
+exports.getPokemonByPokedex = async (req, res) => {
+    try{
+        const ParamsPokedex = req.params.pokedex;
+        const foundPokemon = await Pokemon.findAll({
+            where:{
+                pokedex: ParamsPokedex
+            }
+        })
+        res.status(200).json({
+            foundPokemon,
+            success: true,
+            message: 'Pokemon by pokedex returned'
+        })
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Pokemon not returned by Pokedex -  ERROR: ', error
+        })
+    }
+}
