@@ -135,8 +135,9 @@ exports.deleteTeam = async (req, res) => {
     try{
         const teamId = req.params.id;
         const foundTeam = await Team.findByPk(teamId);
+        const deletedTeam = await foundTeam.destroy();
         res.status(200).json({
-            foundTeam,
+            deletedTeam,
             success: true,
             message: 'Team deleted'
         })
@@ -145,6 +146,35 @@ exports.deleteTeam = async (req, res) => {
         res.status(400).json({
             success: false,
             message: 'Team not deleted -  ERROR: ', error
+        })
+    }
+}
+/**
+ * @desc Create team
+ * @route POST api/create/team/:pokedex
+ * @access Public
+ */
+exports.createTeam = async (req, res) => {
+    try{
+        const teamBody = req.body;        
+        const ParamsPokedex = req.params.pokedex;
+        const PokemonToAdd = await Pokemon.findAll({
+            where : {
+                pokedex : ParamsPokedex
+            }
+        });
+        const newData = {...teamBody, "pokemon" : {...PokemonToAdd}}
+        const newTeam = await Team.create(newData);
+        res.status(200).json({
+            newTeam,
+            success: true,
+            message: 'New team create'
+        });
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Team not added - ERROR: ', error
         })
     }
 }
