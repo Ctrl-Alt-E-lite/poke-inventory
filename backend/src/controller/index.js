@@ -1,4 +1,6 @@
 const express = require('express');
+const app = express()
+const { append } = require('express/lib/response');
 const sequelize = require('../db');
 const { Team, Pokemon } = require('../models/index');
 
@@ -52,6 +54,23 @@ exports.getAllPokemonOnTeam = async (req, res) => {
         res.status(400).json({
             success: false,
             message: 'Pokemon on Team not returned - ERROR: ', error
+        })
+    }
+}
+
+exports.getAllPokemon =  async (req, res) => {
+    try{
+        const getPokemon = await Pokemon.findAll()
+        res.status(200).json({
+            getPokemon,
+            success: true,
+            message: 'Pokemon returned'
+        })
+    } catch(err){
+        console.log(err);
+        res.status(400).json({
+            success: false,
+            message: 'pokemon not returned'
         })
     }
 }
