@@ -1,5 +1,5 @@
+//DB using Sequelize to connect
 const { Sequelize } = require('sequelize');
-const path = require('path');
 
 const sequelize = new Sequelize('poke_inventory', 'root', '', {
     host: 'localhost',
