@@ -1,6 +1,6 @@
 const express = require('express');
 const sequelize = require('../db');
-const Team = require('../models/Team');
+const { Team, Pokemon } = require('../models/index');
 
 /**
  * @desc Get all Teams
