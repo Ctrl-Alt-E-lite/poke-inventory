@@ -7,14 +7,14 @@ import LinkButton from './LinkButton';
 function Card({pokemon, includeDescription}) {
     return (
         <div className='card'>
-            <div className="card-title">
-                <h3>{item.title}</h3>
+            <div className="card-pokemon">
+                <h3>{pokemon.name}</h3>
             </div>
             <div className="card-image">
-                <img src={[pokemon.image]} alt={pokemon.title} />
+                <img src={[pokemon.image]} alt={pokemon.name} />
             </div>
             <div className="card-content">
-                {includeDescription && pokemon.description}
+                {includeDescription && pokemon.base}
             </div>
             <div className="card-actions">
                 <LinkButton to={`pokedex/${pokemon.pokedex}` text={'Stats'}}/>

@@ -1,7 +1,5 @@
 // Footer hosts spinning Loader
 
-// Home Button in Footer
-
 import React from 'react'
 
 function Footer() {
@@ -11,5 +9,8 @@ function Footer() {
     </div>
   )
 }
+
+// Home Button in Footer
+
 
 export default Footer
