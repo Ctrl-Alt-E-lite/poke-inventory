@@ -1,7 +1,16 @@
-import React from "react";
+// App Title
+import React from 'react'
 
-const Header = () = {
-    render(
-        
-    )
+function Header() {
+  return (
+    <div>
+
+    </div>
+  )
 }
+
+
+
+// Hamburger Menu with Pages
+
+export default Header

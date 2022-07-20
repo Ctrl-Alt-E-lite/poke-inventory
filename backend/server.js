@@ -11,7 +11,7 @@ sequelize
   .authenticate()
   .then((res) => console.log('Database is connected'))
   .catch((err) => {
-    console.log('There was an error connecting to the database', error)
+    console.log('There was an error connecting to the database', err)
     process.exit(1);
   });
 
