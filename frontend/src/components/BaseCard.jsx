@@ -9,28 +9,28 @@ function baseCard ({pokemon, includeBase}) {
 
   const navigate = useNavigate();
 
-  const deletePokemon = async ({pokemon.pokedex}) => {
-    if(window.confirm('Are you sure you want to remove this pokemon from your team?')) {
+  const deletePokemon = async function ({ pokemon, pokedex }) {
+    if (window.confirm('Are you sure you want to remove this pokemon from your team?')) {
 
       try {
         console.log('DELETE!');
         const response = await fetch(`http://localhost:5000/api/teams/:teamId/${pokemon.pokedex}`, {
-        method: 'DELETE',
-        headers: {
-          'SameSite': 'None'
-        }
-      });
-      const data = await response.json();
+          method: 'DELETE',
+          headers: {
+            'SameSite': 'None'
+          }
+        });
+        const data = await response.json();
 
-      console.log('Pokemon removed!', data);
-      navigate('/');
-      toast.success('Pokemon was successfully removed!');
+        console.log('Pokemon removed!', data);
+        navigate('/');
+        toast.success('Pokemon was successfully removed!');
 
       } catch (error) {
         console.log(error.message);
         toast.error(`Pokemon was not removed - error: ${error.message}`);
       }
-      
+
     }
   }
 
