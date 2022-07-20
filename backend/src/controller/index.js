@@ -189,13 +189,21 @@ exports.addPokemonToTeam = async (req, res) => {
         let pokemonList = teamToUpdate.dataValues.pokemon;
         //change json to js 
         pokemonList = JSON.parse(pokemonList);
-        pokemonList.push(pokedex);
-        const updatedTeam = await teamToUpdate.update({pokemon : pokemonList});
-        res.status(200).json({
-            updatedTeam,
-            success: true,
-            message: 'Pokemon Added'
-        });
+        if(pokemonList < 6) {
+            pokemonList.push(pokedex);
+            const updatedTeam = await teamToUpdate.update({pokemon : pokemonList});
+            res.status(200).json({
+                updatedTeam,
+                success: true,
+                message: 'Pokemon Added'
+            });
+        }else{
+            res.status(400).json({
+                success: false,
+                message: 'You already have 6 pokemon on your team'
+            })
+        }
+
     }catch(error){
         console.log(error);
         res.status(400).json({
@@ -246,3 +254,83 @@ exports.deletePokemonOffTeam = async (req, res) => {
         })
     }
 }
+/**
+ * @desc Update team name
+ * @route PUT api/update/team-name/:id
+ * @access Private
+ */
+exports.updateTeamName = async (req, res) => {
+    try{
+        const name = req.body;
+        const teamId = req.params.id;
+
+        const teamToUpdate = await Team.findByPk(teamId);
+        const updatedTeam = await teamToUpdate.update(name);
+        res.status(200).json({
+            updatedTeam,
+            sucess: true,
+            message: 'Updated team name'
+        })
+
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Team name not updated - ERROR : ', error
+        })
+    }
+}
+// /**
+//  * @desc Update teamId
+//  * @route PUT api/add-team-id/:id/pokemon/:pokedex
+//  * @access Private
+//  */
+// exports.addTeamIdToPokemon = async (req, res) => {
+//     try{
+//         const paramsPokedex = req.params.pokedex;
+//         //change paramsPokedex to a number
+//         const pokedex = Number(paramsPokedex);
+        
+//         const paramsTeamId = req.params.id;
+//         //change paramsTeamId to a number
+//         const numTeamId = Number(paramsTeamId);
+
+
+//         //get team first to check if pokemon is in team
+//         const findTeam = await Team.findByPk(paramsTeamId);
+        
+//         //get pokemon to update
+//         const findPokemon = await Pokemon.findAll({
+//             where: {
+//                 pokedex : paramsPokedex
+//             }
+//         });
+//         let teamIdField = findPokemon[0].dataValues.teamId;
+//         teamIdField = JSON.parse(teamIdField);
+//         teamIdField.teamID = numTeamId
+//         console.log(teamIdField)
+//         let pokemonList = findTeam.dataValues.pokemon;
+//         pokemonList = JSON.parse(pokemonList);
+
+//         if(pokemonList.includes(pokedex)){
+//             //const updatedPokemon = await findPokemon.update({teamId : paramsTeamId});
+//             res.status(200).json({
+//                 //updatedPokemon,
+//                 success: true,
+//                 message: 'Team ID updated!'
+//             })
+//         }else{
+//             res.status(400).json({
+//                 success: false,
+//                 message: 'This pokemon is not in on your team'
+//             })
+//         }
+
+//     }catch(error){
+//         console.log(error);
+//         res.status(400).json({
+//             success: false,
+//             message: 'TeamId not added - ERROR : ', error
+//         })
+//     }
+// }
