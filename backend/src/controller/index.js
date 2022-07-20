@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express()
-const { append } = require('express/lib/response');
 const sequelize = require('../db');
 const { Team, Pokemon } = require('../models/index');
 
@@ -151,20 +150,13 @@ exports.deleteTeam = async (req, res) => {
 }
 /**
  * @desc Create team
- * @route POST api/create/team/:pokedex
+ * @route POST api/create/team/
  * @access Public
  */
 exports.createTeam = async (req, res) => {
     try{
         const teamBody = req.body;        
-        const ParamsPokedex = req.params.pokedex;
-        const PokemonToAdd = await Pokemon.findAll({
-            where : {
-                pokedex : ParamsPokedex
-            }
-        });
-        const newData = {...teamBody, "pokemon" : {...PokemonToAdd}}
-        const newTeam = await Team.create(newData);
+        const newTeam = await Team.create(teamBody);
         res.status(200).json({
             newTeam,
             success: true,
@@ -175,6 +167,82 @@ exports.createTeam = async (req, res) => {
         res.status(400).json({
             success: false,
             message: 'Team not added - ERROR: ', error
+        })
+    }
+}
+/**
+ * @desc add pokemon to team
+ * @route PUT api/add-pokemon/:pokedex/team/:id
+ * @access Public
+ */
+exports.addPokemonToTeam = async (req, res) => {
+    try{
+        const teamId = req.params.id;
+        const ParamsPokedex = req.params.pokedex;
+        const PokemonToAdd = await Pokemon.findAll({
+            where : {
+                pokedex : ParamsPokedex
+            }
+        }); 
+        const teamToUpdate = await Team.findByPk(teamId);
+        const pokedex = PokemonToAdd[0].dataValues.pokedex
+        let pokemonList = teamToUpdate.dataValues.pokemon;
+        //change json to js 
+        pokemonList = JSON.parse(pokemonList);
+        pokemonList.push(pokedex);
+        const updatedTeam = await teamToUpdate.update({pokemon : pokemonList});
+        res.status(200).json({
+            updatedTeam,
+            success: true,
+            message: 'Pokemon Added'
+        });
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Pokemon not added to team - ERROR: ', error
+        })
+    }
+}
+/**
+ * @desc delete pokemon off team
+ * @route PUT api/delete/team/:id/pokemon/:pokedex
+ * @access Public
+ */
+exports.deletePokemonOffTeam = async (req, res) => {
+    try{
+        const teamId = req.params.id;
+        const paramsPokedex = req.params.pokedex;
+        const pokedex = Number(paramsPokedex);
+
+        //find team that has pokemon to delete
+        const findTeam = await Team.findByPk(teamId);
+        let pokemonList = findTeam.dataValues.pokemon;
+        pokemonList = JSON.parse(pokemonList);
+
+        //check pokemonList is greater than 0 and check the pokemon to delete is in the team list
+        if(pokemonList.length > 0 && pokemonList.includes(pokedex)){
+            const index = pokemonList.indexOf(pokedex);
+            console.log(index)
+            pokemonList.splice(index, 1);
+        }else{
+            res.status(400).json({
+                success: false,
+                message: 'That pokemon is not on the team!'
+            })
+        } 
+        const teamUpdated = await findTeam.update({pokemon: pokemonList});
+        res.status(200).json({
+            teamUpdated,
+            success: true,
+            message: 'Pokemon deleted'
+        });
+        
+    }catch(error){
+        console.log(error);
+        res.status(400).json({
+            success: false,
+            message: 'Pokemon not deleted off team - ERROR', error
         })
     }
 }
