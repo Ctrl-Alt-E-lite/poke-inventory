@@ -1,13 +1,11 @@
 [
     {
         "teamName" : "Really Good Team Name",
-        "pokemon" : {
-            "pokemon1" : "Pikachu",
-            "pokemon2" : "Bulbasaur",
-            "pokemon3" : "Charmander",
-            "pokemon4" : "Ivysaur",
-            "pokemon5" : "Geodude",
-            "pokemon6" : "Sylveon"
-        }
+        "pokemon" : []
+
+    },
+    {
+        "teamName" : "Really Good Team Name",
+        "pokemon" : []
     }
 ]
