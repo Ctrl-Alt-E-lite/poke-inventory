@@ -31,7 +31,7 @@ function Team() {
   return (
     <div className="container">
       <div className='team'>
-        <h1>team Details:</h1>
+        <h1>Team Gallery:</h1>
         <div>
           {team ? <BaseCard item={team} includeBase={true}/> : <Loader />}
         </div>
