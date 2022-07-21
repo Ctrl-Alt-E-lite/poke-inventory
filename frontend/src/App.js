@@ -25,7 +25,6 @@ function App() {
           <Route path='/team-not-added' element={<TeamNotAdded />} />
           <Route path='/*' element={<NotFound />} />
         </Routes>
-        {/* <BaseCard></BaseCard> */}
       </main>
       <Footer />
     </Router>
