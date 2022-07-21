@@ -6,3 +6,11 @@
 // Randomly Generated Team Logo (Circle with First Letters of Team Name)
 
 // Edit Team function, Exchange or Remove Pokemon
+
+export function TeamName () {
+    return(
+        <div>hello</div>
+    )
+}
+
+// export default TeamName;

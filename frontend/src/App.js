@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import {Create, Edit, TeamName} from './pages/TeamName';
+import { TeamName} from './pages/TeamName';
 import Teams from './pages/Teams';
 import Header from './components/Header';
 import Home from './pages/Home';
@@ -17,8 +16,6 @@ function App() {
       <main>
         <Routes>
           <Route path='/home' element={<Home />} />
-          <Route path='/create-team' element={<Create />} />
-          <Route path='/edit-team/:id' element={<Edit />} />
           <Route path='/teams/' element={<Teams />} />
           <Route path='/teams/:id' element={<TeamName />} />
           <Route path='/pokedex/' element={<Pokedex />} />

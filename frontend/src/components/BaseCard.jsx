@@ -1,10 +1,6 @@
 // Base info for Pokemon by Pokedex #
-
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-import LinkButton from './LinkButton';
-
-function baseCard ({pokemon, includeBase}) {
+export function BaseCard ({pokemon, includeBase}) {
 
   const deletePokemon = async function ({ pokemon, pokedex }) {
     if (window.confirm('Are you sure you want to remove this pokemon from your team?')) {
@@ -20,7 +16,6 @@ function baseCard ({pokemon, includeBase}) {
         const data = await response.json();
 
         console.log('Pokemon removed!', data);
-        // navigate('/');
 
       } catch (error) {
         console.log(error.message);
@@ -31,20 +26,20 @@ function baseCard ({pokemon, includeBase}) {
   }
 
   return (
-    <div className='base-card'>
-      <div className="base-card-title">
+    <div >
+      <div >
         <h3>{pokemon.title}</h3>
       </div>
-      <div className='base-card-price'>{`$ ${pokemon.price}`}</div>
-      <div className="base-card-image">
+      <div >{`$ ${pokemon.price}`}</div>
+      <div >
         <img src={pokemon.image} alt={pokemon.title}/>
       </div>
-      <div className="base-card-content">
+      <div>
         {includeBase && pokemon.base}
       </div>
-      <div className="base-card-actions">
-        <LinkButton to={`/`} text={'Back'}/>
-        <button className='link-btn-delete' 
+      <div >
+        <a href='/' text={'Back'}/>
+        <button  
           onClick={() => deletePokemon(pokemon.pokedex)}
           >
             Delete
@@ -54,4 +49,4 @@ function baseCard ({pokemon, includeBase}) {
   )
 }
 
-export default baseCard;
+export default BaseCard;

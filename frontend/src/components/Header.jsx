@@ -1,6 +1,5 @@
 // App Title
 import Proptypes from 'prop-types';
-import LinkButton from './LinkButton';
 import { Link } from 'react-router-dom';
 
 function Header({text, bgColor, textColor}) {
@@ -24,13 +23,12 @@ function Header({text, bgColor, textColor}) {
             <nav className="header-links">
                 <ul>
                     <li>
-                        <LinkButton style={btnStyles} text={'Create Team'} to={'/create-team'}/>
+                        <a href='/create/team'><button style={btnStyles}>Create Team</button></a>
+                    </li>   <li>
+                        <a href='/teams'><button style={btnStyles}>Team Gallery</button></a>
                     </li>
                     <li>
-                        <LinkButton style={btnStyles} text={'Team Gallery'} to={'/teams'}/>
-                    </li>
-                    <li>
-                        <LinkButton style={btnStyles} text={'Pokedex'} to={'/pokedex'}/>
+                        <a href='/getAllPokemon'><button style={btnStyles}>Pokedex</button></a>
                     </li>
                 </ul>
             </nav>
