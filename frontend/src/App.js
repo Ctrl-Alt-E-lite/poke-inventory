@@ -20,7 +20,7 @@ function App() {
           <Route path='/teams/:id' element={<TeamName />} />
           <Route path='/pokedex/' element={<Pokedex />} />
           <Route path='/pokedex/:pokedex' element={<Pokemon />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='/*' element={<Home />} />
         </Routes>
       </main>
       <Footer />

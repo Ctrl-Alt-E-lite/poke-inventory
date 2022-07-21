@@ -12,8 +12,7 @@ function Home() {
   return (
     <div className='container'>
         <div className='home'>
-            <h1>Home</h1>
-            <p>This is an inventory management app using Node.JS, React and mySQL</p>
+            <h3>Create Your Own Pokemon Team!</h3>
         </div>
 
     </div>
