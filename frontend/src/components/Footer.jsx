@@ -23,7 +23,6 @@ function Footer() {
         <p>Made with ❤️ by Andrea, Dakotah, & Haley</p>
         <div id='links'>
           <a href='https://github.com/Ctrl-Alt-E-lite/poke-inventory'>github</a>
-          <a href='/'>home</a>
         </div>
       </div>
     </StyledFooter>
