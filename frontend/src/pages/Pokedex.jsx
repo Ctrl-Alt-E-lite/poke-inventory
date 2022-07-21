@@ -2,6 +2,7 @@
 
 // On click, go to pokemon page with more infor
 import { useEffect, useState } from "react";
+import PokemonCard from "../components/PokemonCard";
 const Pokedex = () => {
     const[allPokemon, setAllPokemon] = useState([]);
 
@@ -17,11 +18,12 @@ const Pokedex = () => {
     }, [])
 
     return(
-        <>
+        <div>
+        <div class='pokedex-container'>
         {allPokemon.length > 0 ? allPokemon.map((pokemon) => 
-        <div key={pokemon.pokedex}>{pokemon.name} 
-        <img src={pokemon.img} /> </div>): 'No Pokemon in DB'}
-        </>
+        <PokemonCard pokemon={pokemon} />): 'No Pokemon in DB'}
+        </div>
+        </div>
     );
 }
 export default Pokedex;
