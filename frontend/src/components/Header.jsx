@@ -33,7 +33,7 @@ function Header({text, bgColor, textColor}) {
                         <a href='/teams'><button style={btnStyles}>Team Gallery</button></a>
                     </li>
                     <li>
-                        <a href='/getAllPokemon'><button style={btnStyles}>Pokedex</button></a>
+                        <a href='/pokedex'><button style={btnStyles}>Pokedex</button></a>
                     </li>
                 </ul>
             </nav>
