@@ -7,3 +7,11 @@
 
 // Edit Team function, Exchange or Remove Pokemon
 
+
+export function TeamName () {
+    return(
+        <div>hello</div>
+    )
+}
+
+export default TeamName;

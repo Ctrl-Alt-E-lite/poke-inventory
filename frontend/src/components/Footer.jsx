@@ -1,9 +1,11 @@
 // Footer hosts spinning Loader
 
 import React from 'react'
+
 import Styled from 'styled-components'
 
 const StyledFooter = Styled.div`
+
     display: flex;
     justify-content: space-around;
   a {
@@ -19,6 +21,7 @@ const StyledFooter = Styled.div`
 function Footer() {
   return (
     <StyledFooter>
+
       <div
       style={{
         position: "fixed",
@@ -35,6 +38,7 @@ function Footer() {
         }}
         > 
           <a href='https://github.com/Ctrl-Alt-E-lite/poke-inventory'>github </a>
+
           <a href='/'>home</a>
         </div>
       </div>

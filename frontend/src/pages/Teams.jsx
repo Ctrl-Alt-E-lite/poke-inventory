@@ -1,5 +1,6 @@
 // Page loads list of previously created Teams
 
+
 import { useEffect, useState } from "react";
 import TeamCard from "../components/TeamCard";
 
@@ -20,9 +21,11 @@ const Teams = () => {
 
     return(
         <div>
+
         <div class='teams-container'>
         {allTeams.length > 0 ? allTeams.map((team) => 
         <TeamCard team={team} />): 'No Teams in DB'}
+
         </div>
         </div>
         
