@@ -1,10 +1,7 @@
 // Base info for Pokemon by Pokedex #
 
 import React from 'react';
-<<<<<<< HEAD
-=======
-import { useNavigate } from 'react-router-dom';
->>>>>>> 51424b87d080b257cc76ca5f009586a9c0bf98fb
+// import { useNavigate } from 'react-router-dom';
 import LinkButton from './LinkButton';
 
 function baseCard ({pokemon, includeBase}) {
@@ -23,17 +20,11 @@ function baseCard ({pokemon, includeBase}) {
         const data = await response.json();
 
         console.log('Pokemon removed!', data);
-<<<<<<< HEAD
         // navigate('/');
-      } catch (error) {
-        console.log(error.message);
-=======
-        navigate('/');
 
       } catch (error) {
         console.log(error.message);
   
->>>>>>> 51424b87d080b257cc76ca5f009586a9c0bf98fb
       }
 
     }
