@@ -1,13 +1,9 @@
 // Base info for Pokemon by Pokedex #
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import LinkButton from './LinkButton';
 
 function baseCard ({pokemon, includeBase}) {
-
-  const navigate = useNavigate();
 
   const deletePokemon = async function ({ pokemon, pokedex }) {
     if (window.confirm('Are you sure you want to remove this pokemon from your team?')) {
@@ -23,12 +19,9 @@ function baseCard ({pokemon, includeBase}) {
         const data = await response.json();
 
         console.log('Pokemon removed!', data);
-        navigate('/');
-        toast.success('Pokemon was successfully removed!');
-
+        // navigate('/');
       } catch (error) {
         console.log(error.message);
-        toast.error(`Pokemon was not removed - error: ${error.message}`);
       }
 
     }

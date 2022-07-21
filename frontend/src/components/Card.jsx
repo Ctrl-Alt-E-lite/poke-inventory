@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 // Basic Card template
 
 import React from "react";
@@ -19,11 +17,10 @@ function Card({pokemon, includeDescription}) {
                 {includeDescription && pokemon.base}
             </div>
             <div className="card-actions">
-                <LinkButton to={`pokedex/${pokemon.pokedex}` text={'Stats'}} />
+                <LinkButton to={`pokedex/${pokemon.pokedex}` text={'Stats'}}/>
             </div>
         </div>
     )
 }
 
 export default Card;
->>>>>>> Stashed changes

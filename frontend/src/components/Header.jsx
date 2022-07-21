@@ -1,12 +1,8 @@
-import React from "react";
+// App Title
+import Proptypes from 'prop-types';
+import LinkButton from './LinkButton';
+import { Link } from 'react-router-dom';
 
-<<<<<<< Updated upstream
-const Header = () = {
-    render(
-        
-    )
-}
-=======
 function Header({text, bgColor, textColor}) {
 
     const headerStyles = {
@@ -57,4 +53,3 @@ Header.propTypes = {
 }
 
 export default Header
->>>>>>> Stashed changes
