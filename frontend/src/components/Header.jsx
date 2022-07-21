@@ -1,9 +1,11 @@
 // App Title
 import Proptypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 
-const StyledHeader = styled.header`
+import Styled from 'styled-components';
+
+const StyledHeader = Styled.header`
+
 
 `
 
