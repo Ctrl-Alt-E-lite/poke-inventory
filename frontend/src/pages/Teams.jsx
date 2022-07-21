@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import BaseCard from '../components/BaseCard'
 import Loader from '../components/Loader'
 
-function team() {
+function Team() {
 
     const {id} = useParams();
 
@@ -41,4 +41,4 @@ function team() {
   )
 }
 
-export default team
+export default Team
