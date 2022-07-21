@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Create from './pages/Create';
-import Edit from './pages/Edit';
+import {Create, Edit, TeamName} from './pages/TeamName';
 import Teams from './pages/Teams';
-import TeamName from './pages/TeamName'
 import Header from './components/Header';
 import Home from './pages/Home';
 import Pokedex from './pages/Pokedex';
