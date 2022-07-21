@@ -251,4 +251,38 @@ header li .link-btn {
   letter-spacing: 0.2rem;
 }
 
+/* styling for pokedex page and PokemonCard component */
+.pokedex-container{
+  margin: 1rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.pokemon-card-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pokemon-card-container img{
+  padding: 1rem;
+  background-color: rgb(233, 233, 233);
+}
+.pokemon-card-container:hover{
+  color: red;
+}
+
+/* MOBILE DESIGN */
+@media (max-width: 1050px) and (min-width: 600px) {
+  .pokedex-container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .pokedex-container{
+    grid-template-columns: 1fr;
+  }
+}
 
