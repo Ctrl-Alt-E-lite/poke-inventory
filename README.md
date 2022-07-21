@@ -42,16 +42,13 @@ returns all pokemon on a team
 http://localhost:8080/api/teams/1/all-pokemon
 
 ```json
-        {
-            "id": 1,
-            "teamId": null,
-            "pokedex": 1,
-            "name": "{\"english\":\"Bulbasaur\",\"japanese\":\"フシギダネ\",\"chinese\":\"妙蛙种子\",\"french\":\"Bulbizarre\"}",
-            "type": "[\"Grass\",\"Poison\"]",
-            "base": "{\"HP\":45,\"Attack\":49,\"Defense\":49,\"Sp. Attack\":65,\"Sp. Defense\":65,\"Speed\":45}",
-            "createdAt": "2022-07-20T20:22:03.000Z",
-            "updatedAt": "2022-07-20T20:22:03.000Z"
-        },
+{
+    "findPokemonOnTeam": {
+        "pokemon": "[30]"
+    },
+    "success": true,
+    "message": "Pokemon on Team returned"
+}
 ```
 
 ### GET: GET_ALL_POKEMON
@@ -65,12 +62,14 @@ sample pokemon:
         {
             "id": 1,
             "teamId": null,
-            "pokedex": 1,
-            "name": "{\"english\":\"Bulbasaur\",\"japanese\":\"フシギダネ\",\"chinese\":\"妙蛙种子\",\"french\":\"Bulbizarre\"}",
+            "pokedex": 2,
+            "num": "002",
+            "name": "Ivysaur",
+            "img": "http://www.serebii.net/pokemongo/pokemon/002.png",
             "type": "[\"Grass\",\"Poison\"]",
-            "base": "{\"HP\":45,\"Attack\":49,\"Defense\":49,\"Sp. Attack\":65,\"Sp. Defense\":65,\"Speed\":45}",
-            "createdAt": "2022-07-20T20:22:03.000Z",
-            "updatedAt": "2022-07-20T20:22:03.000Z"
+            "height": "0.99 m",
+            "createdAt": "2022-07-21T17:31:27.000Z",
+            "updatedAt": "2022-07-21T17:31:27.000Z"
         },
 ```
 ### GET: GET_TEAM_BY_ID
@@ -104,14 +103,16 @@ get pokemon by pokedex
 {
     "foundPokemon": [
         {
-            "id": 20,
+            "id": 19,
             "teamId": null,
             "pokedex": 20,
-            "name": "{\"english\":\"Raticate\",\"japanese\":\"ラッタ\",\"chinese\":\"拉达\",\"french\":\"Rattatac\"}",
+            "num": "020",
+            "name": "Raticate",
+            "img": "http://www.serebii.net/pokemongo/pokemon/020.png",
             "type": "[\"Normal\"]",
-            "base": "{\"HP\":55,\"Attack\":81,\"Defense\":60,\"Sp. Attack\":50,\"Sp. Defense\":70,\"Speed\":97}",
-            "createdAt": "2022-07-20T20:22:03.000Z",
-            "updatedAt": "2022-07-20T20:22:03.000Z"
+            "height": "0.71 m",
+            "createdAt": "2022-07-21T17:31:27.000Z",
+            "updatedAt": "2022-07-21T17:31:27.000Z"
         }
     ],
     "success": true,
