@@ -1,70 +1,243 @@
-# Getting Started with Create React App
+# Pokemon App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Create Your Own Pokemon Team
+By searching the [PokeApi database](https://pokeapi.co/), users can create their own pokemon team, and view the pokedex, complete with all of the known pokemon to date!
 
-## Available Scripts
+_______________________
+## Poke_Inventory API
 
-In the project directory, you can run:
+### GET : GET_ALL_TEAMS
+returns all teams
 
-### `npm start`
+http://localhost:8080/api/teams
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```json
+{
+    "allTeams": [
+        {
+            "id": 1,
+            "teamName": "Really Good Team Name",
+            "pokemon": "[2]",
+            "createdAt": "2022-07-20T20:22:03.000Z",
+            "updatedAt": "2022-07-20T20:29:07.000Z"
+        },
+        {
+            "id": 2,
+            "teamName": "Really Good Team Name",
+            "pokemon": "[]",
+            "createdAt": "2022-07-20T20:22:03.000Z",
+            "updatedAt": "2022-07-20T20:22:03.000Z"
+        }
+    ],
+    "success": true,
+    "message": "All teams returned"
+}
+```
 
-### `npm test`
+### GET:  GET_ALL_POKEMON_ON_TEAM
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+returns all pokemon on a team
 
-### `npm run build`
+http://localhost:8080/api/teams/1/all-pokemon
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```json
+        {
+            "id": 1,
+            "teamId": null,
+            "pokedex": 1,
+            "name": "{\"english\":\"Bulbasaur\",\"japanese\":\"フシギダネ\",\"chinese\":\"妙蛙种子\",\"french\":\"Bulbizarre\"}",
+            "type": "[\"Grass\",\"Poison\"]",
+            "base": "{\"HP\":45,\"Attack\":49,\"Defense\":49,\"Sp. Attack\":65,\"Sp. Defense\":65,\"Speed\":45}",
+            "createdAt": "2022-07-20T20:22:03.000Z",
+            "updatedAt": "2022-07-20T20:22:03.000Z"
+        },
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### GET: GET_ALL_POKEMON
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+returns all pokemon
 
-### `npm run eject`
+http://localhost:8080/api/getAllPokemon
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+sample pokemon:
+```json
+        {
+            "id": 1,
+            "teamId": null,
+            "pokedex": 1,
+            "name": "{\"english\":\"Bulbasaur\",\"japanese\":\"フシギダネ\",\"chinese\":\"妙蛙种子\",\"french\":\"Bulbizarre\"}",
+            "type": "[\"Grass\",\"Poison\"]",
+            "base": "{\"HP\":45,\"Attack\":49,\"Defense\":49,\"Sp. Attack\":65,\"Sp. Defense\":65,\"Speed\":45}",
+            "createdAt": "2022-07-20T20:22:03.000Z",
+            "updatedAt": "2022-07-20T20:22:03.000Z"
+        },
+```
+### GET: GET_TEAM_BY_ID
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+http://localhost:8080/api/team/3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Get team by ID
 
-## Learn More
+```json
+{
+    "foundTeam": {
+        "id": 1,
+        "teamName": "Really Good Team Name",
+        "pokemon": "[2]",
+        "createdAt": "2022-07-20T20:22:03.000Z",
+        "updatedAt": "2022-07-20T20:29:07.000Z"
+    },
+    "success": true,
+    "message": "Team by Id returned"
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### GET: GET_POKEMON_BY_POKEDEX
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+http://localhost:8080/api/pokemon/2
 
-### Code Splitting
+get pokemon by pokedex
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+{
+    "foundPokemon": [
+        {
+            "id": 20,
+            "teamId": null,
+            "pokedex": 20,
+            "name": "{\"english\":\"Raticate\",\"japanese\":\"ラッタ\",\"chinese\":\"拉达\",\"french\":\"Rattatac\"}",
+            "type": "[\"Normal\"]",
+            "base": "{\"HP\":55,\"Attack\":81,\"Defense\":60,\"Sp. Attack\":50,\"Sp. Defense\":70,\"Speed\":97}",
+            "createdAt": "2022-07-20T20:22:03.000Z",
+            "updatedAt": "2022-07-20T20:22:03.000Z"
+        }
+    ],
+    "success": true,
+    "message": "Pokemon by pokedex returned"
+}
+```
 
-### Analyzing the Bundle Size
+### DELETE : DELETE_TEAM
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+http://localhost:8080/api/delete/team/2
 
-### Making a Progressive Web App
+delete a team by id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```json
+{
+    "deletedTeam": {
+        "id": 2,
+        "teamName": "Really Good Team Name",
+        "pokemon": "[]",
+        "createdAt": "2022-07-20T20:22:03.000Z",
+        "updatedAt": "2022-07-20T20:22:03.000Z"
+    },
+    "success": true,
+    "message": "Team deleted"
+}
+```
 
-### Advanced Configuration
+### POST: CREATE_NEW_TEAM
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+http://localhost:8080/api/create/team
 
-### Deployment
+create team - adds name 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Body:
+```json
+{
+    "teamName" : "TEST TEAM NAME"
+}
+```
 
-### `npm run build` fails to minify
+```json
+{
+    "newTeam": {
+        "id": 3,
+        "teamName": "TEST TEAM NAME",
+        "updatedAt": "2022-07-20T20:37:17.894Z",
+        "createdAt": "2022-07-20T20:37:17.894Z"
+    },
+    "success": true,
+    "message": "New team create"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### PUT: DELETE_POKEMON_OFF_TEAM
+
+http://localhost:8080/api/delete/team/1/pokemon/10
+
+delete pokemon off team
+
+```json
+{
+    "teamUpdated": {
+        "id": 1,
+        "teamName": "Really Good Team Name",
+        "pokemon": [
+            5
+        ],
+        "createdAt": "2022-07-20T20:22:03.000Z",
+        "updatedAt": "2022-07-20T20:38:18.117Z"
+    },
+    "success": true,
+    "message": "Pokemon deleted"
+}
+```
+
+### PUT: ADD_POKEMON_TO_TEAM
+
+http://localhost:8080/api/add-pokemon/10/team/1
+
+Add pokemon to team
+
+```json
+{
+    "updatedTeam": {
+        "id": 1,
+        "teamName": "Really Good Team Name",
+        "pokemon": [
+            5,
+            30
+        ],
+        "createdAt": "2022-07-20T20:22:03.000Z",
+        "updatedAt": "2022-07-20T20:38:37.304Z"
+    },
+    "success": true,
+    "message": "Pokemon Added"
+}
+```
+
+### PUT: UPDATE_TEAM_NAME
+
+http://localhost:8080/api/update/team-name/1
+
+update team name
+
+body:
+```json
+{
+  "teamName": "TEST NEW TEAM NAME"
+}
+```
+
+```json
+{
+    "updatedTeam": {
+        "id": 1,
+        "teamName": "TEST NEW TEAM NAME",
+        "pokemon": "[5,30]",
+        "createdAt": "2022-07-20T20:22:03.000Z",
+        "updatedAt": "2022-07-20T20:38:54.750Z"
+    },
+    "sucess": true,
+    "message": "Updated team name"
+}
+```
+### PUT: ADD_TEAMID_TO_POKEMON
+
+http://localhost:8080/api/add-team-id/1/pokemon/2
+
+NOT COMPLETE YET
