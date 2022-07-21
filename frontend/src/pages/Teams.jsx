@@ -2,8 +2,9 @@
 
 import React, {useState, useEffect}  from 'react'; 
 import { useParams } from 'react-router-dom';
-import Card from '../components/Card';
-import Loader from '../components/Loader';
+
+import BaseCard from '../components/BaseCard'
+import Loader from '../components/Loader'
 
 function Team() {
 
@@ -30,9 +31,9 @@ function Team() {
   return (
     <div className="container">
       <div className='team'>
-        <h1>Team Gallery:</h1>
+        <h1>team Details:</h1>
         <div>
-          {team ? <Card item={team} includeBase={true}/> : <Loader />}
+          {team ? <BaseCard item={team} includeBase={true}/> : <Loader />}
         </div>
       </div>
     </div>

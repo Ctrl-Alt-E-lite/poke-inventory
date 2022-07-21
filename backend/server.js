@@ -15,10 +15,11 @@ sequelize
     process.exit(1);
   });
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
-app.use(cors(corsOptions));
+// var corsOptions = {
+//   origin: "http://localhost:8080"
+// };
+// app.use(cors(corsOptions));
+app.use(cors());
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
