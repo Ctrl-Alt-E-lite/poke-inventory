@@ -42,8 +42,8 @@ function Header({text, bgColor, textColor}) {
 
 Header.defaultProps = {
     text: 'App',
-    textColor: #FFF8F0,
-    bgColor: #9E2B25
+    textColor: 'cream',
+    bgColor: 'black'
 }
 
 Header.propTypes = {

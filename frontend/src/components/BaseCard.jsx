@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import LinkButton from './LinkButton';
 
 function baseCard ({pokemon, includeBase}) {
@@ -24,11 +23,10 @@ function baseCard ({pokemon, includeBase}) {
 
         console.log('Pokemon removed!', data);
         navigate('/');
-        toast.success('Pokemon was successfully removed!');
 
       } catch (error) {
         console.log(error.message);
-        toast.error(`Pokemon was not removed - error: ${error.message}`);
+  
       }
 
     }
