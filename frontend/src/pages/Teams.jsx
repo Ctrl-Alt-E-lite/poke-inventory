@@ -1,44 +1,31 @@
 // Page loads list of previously created Teams
 
-import React, {useState, useEffect}  from 'react'; 
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import TeamCard from "../components/TeamCard";
 
-import BaseCard from '../components/BaseCard'
-import Loader from '../components/Loader'
+const Teams = () => {
+    const[allTeams, setAllTeams] = useState([]);
 
-function Team() {
-
-    const {id} = useParams();
-
-    const [ team, setTeam ] = useState();
-
-    const getTeam = async (teamId) => {
-        const response = await fetch(`http://localhost:5000/api/teams/${teamId}`);
-
+    const getAllTeams = async () => {
+        const response = await fetch('http://localhost:8080/api/teams')
         const data = await response.json();
-
-        console.log(data.team);
-
-        setTeam(data.team);
+        const{allTeams} = data
+        setAllTeams(allTeams);
+        console.log(allTeams);
+        console.log(allTeams);
     }
-
     useEffect(() => {
-        getTeam(id);
-    },[id]);
+        getAllTeams()
+    }, [])
 
-// View Team button
-
-  return (
-    <div className="container">
-      <div className='team'>
-        <h1>Team Gallery:</h1>
+    return(
         <div>
-          {team ? <BaseCard item={team} includeBase={true}/> : <Loader />}
+        <div class='teams-container'>
+        {allTeams.length > 0 ? allTeams.map((team) => 
+        <TeamCard team={team} />): 'No Teams in DB'}
         </div>
-      </div>
-    </div>
-
-  )
+        </div>
+        
+    );
 }
-
-export default Team
+export default Teams;
