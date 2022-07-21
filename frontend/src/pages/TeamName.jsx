@@ -13,4 +13,4 @@ export function TeamName () {
     )
 }
 
-// export default TeamName;
+export default TeamName;

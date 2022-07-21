@@ -1,6 +1,11 @@
 // App Title
 import Proptypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledHeader = styled.header`
+
+`
 
 function Header({text, bgColor, textColor}) {
 
@@ -14,7 +19,7 @@ function Header({text, bgColor, textColor}) {
     }
 
   return (
-    <header style={headerStyles}>
+    <StyledHeader style={headerStyles}>
         <div className='header-container'>
             <Link to="/" style={{textDecoration: 'none'}}>
                 <div className='header-text' style={{color: textColor}}>{text}</div>
@@ -34,7 +39,7 @@ function Header({text, bgColor, textColor}) {
             </nav>
 
         </div>
-    </header>
+    </StyledHeader>
   )
 }
 

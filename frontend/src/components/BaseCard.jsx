@@ -30,7 +30,6 @@ export function BaseCard ({pokemon, includeBase}) {
       <div >
         <h3>{pokemon.title}</h3>
       </div>
-      <div >{`$ ${pokemon.price}`}</div>
       <div >
         <img src={pokemon.image} alt={pokemon.title}/>
       </div>
