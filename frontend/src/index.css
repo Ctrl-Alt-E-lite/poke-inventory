@@ -273,6 +273,27 @@ header li .link-btn {
 .pokemon-card-container:hover{
   color: red;
 }
+/* STYLING FOR CREATE TEAM COMPONENT*/
+.form-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form button{
+  margin: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: red;
+  border-radius: 1rem;
+  border-style: none;
+}
 
 /* MOBILE DESIGN */
 @media (max-width: 1050px) and (min-width: 600px) {
