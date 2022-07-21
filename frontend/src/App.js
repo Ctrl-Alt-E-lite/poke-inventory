@@ -7,7 +7,6 @@ import Pokedex from './pages/Pokedex';
 import Pokemon from './pages/Pokemon';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
-import BaseCard from './components/BaseCard';
 
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
           <Route path='/pokedex/:pokedex' element={<Pokemon />} />
           <Route path='/*' element={<NotFound />} />
         </Routes>
-        {/* <BaseCard></BaseCard> */}
       </main>
       <Footer />
     </Router>
