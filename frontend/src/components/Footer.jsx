@@ -38,8 +38,6 @@ function Footer() {
         }}
         > 
           <a href='https://github.com/Ctrl-Alt-E-lite/poke-inventory'>github </a>
-
-          <a href='/'>home</a>
         </div>
       </div>
     </StyledFooter>
