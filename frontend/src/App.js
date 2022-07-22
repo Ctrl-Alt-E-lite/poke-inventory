@@ -21,13 +21,9 @@ function App() {
           <Route path='/teams/:id' element={<TeamName />} />
           <Route path='/pokedex/' element={<Pokedex />} />
           <Route path='/pokedex/:pokedex' element={<Pokemon />} />
-<<<<<<< HEAD
-          <Route path='/*' element={<Home />} />
-=======
           <Route path='/create/team' element={<TeamName />} />
           <Route path='/team-not-added' element={<TeamNotAdded />} />
           <Route path='/*' element={<NotFound />} />
->>>>>>> ad75d2bbffe8fec790f3d7083fdcbc4ecd1fe71b
         </Routes>
       </main>
       <Footer />
