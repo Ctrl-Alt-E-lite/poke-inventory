@@ -21,7 +21,6 @@ const AddPokemonToTeam = () =>{
     useEffect(() => {
         getAllPokemon()
     }, [])
-
     return(
         <>
         <div className="add-pokemon-container">
@@ -43,7 +42,7 @@ const AddPokemonToTeam = () =>{
                 const data = await response.json();
                 console.log(data);
                 setPokemonImg(pokemonImg => [...pokemonImg, pokemon.img]);
-                console.log(pokemonImg)
+                console.log(pokemonImg);
             }}
             >Add Pokemon</button>
         </div>
