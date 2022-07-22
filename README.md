@@ -312,8 +312,3 @@ body:
     "message": "Updated team name"
 }
 ```
-### PUT: ADD_TEAMID_TO_POKEMON
-
-http://localhost:8080/api/add-team-id/1/pokemon/2
-
-NOT COMPLETE YET
