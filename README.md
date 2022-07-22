@@ -1,8 +1,73 @@
 # Pokemon App
 
 ## Create Your Own Pokemon Team
-By searching the [PokeApi database](https://pokeapi.co/), users can create their own pokemon team, and view the pokedex, complete with all of the known pokemon to date!
+//ENTER PROJECT INFO HERE
 
+## Technologies
+Example of how to list out your tech
+
+- JavaScript
+- React - version 18.2.0
+- Node.js - version 18.4.0
+- Express.js - version 4.18.1
+- Sequelize - version 6.21.3
+- mySQL - version 2.18.1
+
+---
+
+## Setup
+
+To run this project:
+- Clone this repo
+- Fork your cloned repo
+
+First NPM has to be installed in both the root and frontend folder
+```
+$ cd ../poke-inventory
+$ npm install
+$ cd ../poke-inventory/frontend
+$ npm install
+```
+A .env file will have to be set up in the root folder, with the following code
+```
+PORT = 8080
+MODE = development
+```
+
+To seed the database you will need xampp, phpMyAdmin, and to run the seeder file
+```
+$ cd ../poke-inventory/backend
+$ node seeder.js
+```
+
+To run the project use
+```
+$ cd ../poke-inventory/frontend
+$ npm start
+$ cd ..
+$ npm run dev 
+    //you could also use
+$ node server.js
+```
+npm start will start the frontend React project, to get this up and running make sure to be in the frontend folder
+
+npm run dev will start the backend express server, or you can use node server.js to run the server, both while in the root folder
+
+---
+
+## Features
+
+- User can view all Pokemon
+- User can add a team
+- User can view all teams
+- Pokemon can be added to a team
+
+To-do:
+
+- User can delete pokemon off a team
+- User can delete teams
+
+---
 _______________________
 ## Poke_Inventory API
 
