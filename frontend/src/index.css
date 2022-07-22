@@ -273,6 +273,61 @@ header li .link-btn {
 .pokemon-card-container:hover{
   color: red;
 }
+/* STYLING FOR CREATE TEAM COMPONENT*/
+.form-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form button{
+  margin: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: red;
+  border-radius: 1rem;
+  border-style: none;
+}
+form button:hover{
+  background-color: #9E2B25;
+  cursor: pointer;
+}
+/*STYLING FOR ADD POKEMON PAGE*/
+.add-pokemon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pokemon-team{
+  padding: 5rem 10rem;
+  margin: 1rem;
+  border: 1px solid black;
+}
+.browse-pokemon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.browse-pokemon-container button {
+  margin: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: red;
+  border-radius: 1rem;
+  border-style: none;
+}
+.browse-pokemon-container button:hover{
+  background-color: #9E2B25;
+  cursor: pointer;
+}
 
 /* MOBILE DESIGN */
 @media (max-width: 1050px) and (min-width: 600px) {
