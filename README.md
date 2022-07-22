@@ -66,6 +66,7 @@ To-do:
 
 - User can delete pokemon off a team
 - User can delete teams
+- User can update their team name
 
 ---
 
