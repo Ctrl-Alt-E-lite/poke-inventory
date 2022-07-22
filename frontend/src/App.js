@@ -25,7 +25,7 @@ function App() {
           <Route path='/create/team' element={<TeamName />} />
           <Route path='/team-not-added' element={<TeamNotAdded />} />
           <Route path='/add-pokemon-to-team/:id' element={<AddPokemonToTeam />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='/*' element={<Home />} />
         </Routes>
       </main>
       <Footer />
