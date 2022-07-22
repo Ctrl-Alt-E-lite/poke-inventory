@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 // Show Name, Pokedex #, Image and Type(s) 
 
 function Pokemon () {
-
     const [pokemons, setPokemon] = useState([]);
     const params = useParams()
     const getPokemonById = async () => {
