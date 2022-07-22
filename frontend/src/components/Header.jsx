@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Styled from 'styled-components';
 
-const StyledHeader = Styled.header`
-
-
-`
+const StyledHeader = Styled.header``
 
 function Header({text, bgColor, textColor}) {
 
