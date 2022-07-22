@@ -25,7 +25,6 @@ const Teams = () => {
         <div class='teams-container'>
         {allTeams.length > 0 ? allTeams.map((team) => 
         <TeamCard team={team} />): 'No Teams in DB'}
-
         </div>
         </div>
         

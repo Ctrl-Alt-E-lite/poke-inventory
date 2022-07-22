@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
 import TeamName from './pages/TeamName';
 import TeamNotAdded from './pages/TeamNotAdded';
+import AddPokemonToTeam from './pages/AddPokemonToTeam';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/pokedex/:pokedex' element={<Pokemon />} />
           <Route path='/create/team' element={<TeamName />} />
           <Route path='/team-not-added' element={<TeamNotAdded />} />
+          <Route path='/add-pokemon-to-team/:id' element={<AddPokemonToTeam />} />
           <Route path='/*' element={<NotFound />} />
         </Routes>
       </main>
