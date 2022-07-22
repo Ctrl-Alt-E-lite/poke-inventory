@@ -189,7 +189,7 @@ exports.addPokemonToTeam = async (req, res) => {
         let pokemonList = teamToUpdate.dataValues.pokemon;
         //change json to js 
         pokemonList = JSON.parse(pokemonList);
-        if(pokemonList < 6) {
+        if(pokemonList.length < 6) {
             pokemonList.push(pokedex);
             const updatedTeam = await teamToUpdate.update({pokemon : pokemonList});
             res.status(200).json({
