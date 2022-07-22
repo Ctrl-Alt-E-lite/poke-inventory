@@ -131,7 +131,7 @@ header {
   padding: 1rem;
   margin: 1rem 0.5rem 0 0.5rem;
   background: #FFF8F0;
-  color: #000;
+  color: ##b64943;
   border-radius: 10px;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
@@ -226,7 +226,7 @@ header li .link-btn {
 
 .loader {
   border: 16px solid #f3f3f3;
-  border-top: 16px solid #000;
+  border-top: 16px solid #b64943;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -271,7 +271,7 @@ header li .link-btn {
   background-color: rgb(233, 233, 233);
 }
 .pokemon-card-container:hover{
-  color: red;
+  color: grey;
 }
 /* STYLING FOR CREATE TEAM COMPONENT*/
 .form-div{
