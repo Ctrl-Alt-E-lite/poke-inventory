@@ -1,7 +1,7 @@
 # Pokemon App
 
 ## Create Your Own Pokemon Team
-//ENTER PROJECT INFO HERE
+In the Pokemon team app users browse the pokedex, browse teams, make a team, and add pokemon to that team.
 
 ## Technologies
 Example of how to list out your tech
@@ -66,8 +66,19 @@ To-do:
 
 - User can delete pokemon off a team
 - User can delete teams
+- User can update their team name
 
 ---
+
+## How does it look?
+Home Page
+![Home Page](./readmeImg/home.png)
+Pokedex
+![Pokedex](./readmeImg/pokedex.png)
+Make a team
+![Make A team](./readmeImg/makeTeam.png)
+Add Pokemon to a team
+![Add Pokemon](./readmeImg/addPokemon.png)
 _______________________
 ## Poke_Inventory API
 
@@ -302,8 +313,3 @@ body:
     "message": "Updated team name"
 }
 ```
-### PUT: ADD_TEAMID_TO_POKEMON
-
-http://localhost:8080/api/add-team-id/1/pokemon/2
-
-NOT COMPLETE YET

@@ -74,6 +74,10 @@ header {
   border-radius: 10px;
 }
 
+.card:hover {
+  color: #c5001a;
+}
+
 .card h3, .base-card h3 {
   font-weight: 400;
   text-align: center;
@@ -131,7 +135,7 @@ header {
   padding: 1rem;
   margin: 1rem 0.5rem 0 0.5rem;
   background: #FFF8F0;
-  color: ##b64943;
+  color: #b64943;
   border-radius: 10px;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
@@ -265,6 +269,8 @@ header li .link-btn {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f3f3f340;
+  padding: 2em
 }
 .pokemon-card-container img{
   padding: 1rem;
@@ -329,6 +335,24 @@ form button:hover{
   cursor: pointer;
 }
 
+.home-instructions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 70vh;
+}
+.home ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+}
+.instructions li{
+  padding: 1rem;
+}
+
 /* MOBILE DESIGN */
 @media (max-width: 1050px) and (min-width: 600px) {
   .pokedex-container{
@@ -341,3 +365,49 @@ form button:hover{
   }
 }
 
+body {
+  background-image: url("/src/wEvQsO.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  display: flex;
+}
+
+#footing {
+  display: flex;
+  position: absolute;
+  background-color: #f3f3f3;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #c5001a;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  font-size:larger;
+  padding: 1em 1em 0em;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+button:hover {
+  color:#c5001a;
+}
+
+.header-text {
+  font-weight: 900;
+  font-size: x-large;
+}
